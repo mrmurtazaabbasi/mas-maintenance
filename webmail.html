@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millan Agro Seed</title>
+    <meta name="description" content="Millan Agro Seed is Trade, Sales, Research & Marketing Organization that deals with Hybrid and OP vegetable, field crops">
+
+    <style>
+        * {
+            margin: none;
+            box-sizing: border-box;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+        .body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 30px;
+            width: 100%;
+            height: 100%;
+            background-color:lightgray;
+            overflow: hidden;
+            font-family: "Oswald", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        p {
+            line-height:20px;
+        }
+        .body > div {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            filter: drop-shadow(0 5px 2px silver);
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            justify-content: center;
+        }
+        .body > div > div {
+            width: 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+        }
+        .logo {
+            width: 400px;
+            height: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div>
+            <div>
+                <img src="Millan Agro Seed Logo-01.png" alt="Millan Agro Seed" class="logo">
+                <h2 style="text-align: center; text-transform: capitalize;" class="sec">You'll be redirected to webmail in 5 seconds</h2>
+                <p>If you're not redirected automatically then please <a href="https://sg2plcpnl0025.prod.sin2.secureserver.net:2096/">click here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let secEl = document.querySelector('.sec')
+        let interval = setInterval(() => {
+            let seconds = Number(/\d/.exec(secEl.innerHTML)) - 1;
+            console.log(seconds)
+            secEl.innerHTML = secEl.innerHTML.replace(/\d/, seconds--)
+        }, 1000);
+
+        setTimeout(() => {
+            clearInterval(interval)
+            window.location.href = "https://sg2plcpnl0025.prod.sin2.secureserver.net:2096/"
+        }, 5000);
+    </script>
+</body>
+</html>
