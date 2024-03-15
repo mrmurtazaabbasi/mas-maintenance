@@ -195,8 +195,8 @@
     <script>
         const baseLeafletUrl = 'https://millanagroseed.com/leaflets'; // Base URL where leaflets are stored
         const leafletPath = window.location.pathname.replace(/\/$/g, '.jpg'); // Construct leaflet path
-        console.log(leafletPath)
         const leafletUrl = baseLeafletUrl + leafletPath;
+        console.log(leafletUrl)
 
         // Function to check if the leaflet exists
         function checkLeaflet(url, callback) {
@@ -215,7 +215,7 @@
             if(window.location.pathname == '/404')
                 return;
             if (exists) {
-                window.location.href = leafletPath;
+                window.location.href = 'leaflets/' + leafletPath;
             } else {
                 window.location.href = '/404'; // Redirect to 404 page if the leaflet does not exist
             }
