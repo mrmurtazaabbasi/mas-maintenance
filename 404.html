@@ -191,5 +191,35 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const baseLeafletUrl = 'https://millanagroseed.com/leaflets'; // Base URL where leaflets are stored
+        const leafletPath = window.location.pathname.replace(/\/$/g, '.jpeg'); // Construct leaflet path
+        console.log(leafletPath)
+        const leafletUrl = baseLeafletUrl + leafletPath;
+
+        // Function to check if the leaflet exists
+        function checkLeaflet(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('HEAD', url, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    callback(xhr.status < 400); // If status is less than 400, the file exists
+                }
+            };
+            xhr.send();
+        }
+
+        // Check if the leaflet exists and display it or redirect to 404.html
+        checkLeaflet(leafletUrl, function(exists) {
+            if(window.location.pathname == '/404')
+                return;
+            if (exists) {
+                window.location.href = leafletPath;
+            } else {
+                window.location.href = '/404'; // Redirect to 404 page if the leaflet does not exist
+            }
+        });
+    </script>
 </body>
 </html>
