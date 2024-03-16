@@ -196,7 +196,7 @@
     <script>
         const baseLeafletUrl = 'https://millanagroseed.com/leaflets'; // Base URL where leaflets are stored
         const leafletPath = window.location.pathname.replace(/\/$/g,'.jpg'); // Construct leaflet path
-        const leafletUrl = baseLeafletUrl + leafletPath;
+        const leafletUrl = baseLeafletUrl + leafletPath.toLowerCase();
         console.log('1', baseLeafletUrl)
         console.log('2', leafletPath)
         console.log('3', leafletUrl)
@@ -222,7 +222,7 @@
             }
                 
             if (exists) {
-                window.location.pathname = '/leaflets/' + leafletPath;
+                window.location.pathname = '/leaflets/' + leafletPath.toLowerCase();
                 console.log('5', window.location.href)
             } else {
                 console.log("Leaflet not found and Hello World!")
