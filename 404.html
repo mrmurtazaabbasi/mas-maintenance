@@ -204,6 +204,7 @@
             xhr.open('HEAD', url, true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
+                    console.log(`xhr.status < 400 : ${xhr.status < 400}`)
                     callback(xhr.status < 400); // If status is less than 400, the file exists
                 }
             };
@@ -215,9 +216,10 @@
             if(window.location.pathname == '/404')
                 return;
             if (exists) {
-                window.location.href = 'leaflets/' + leafletPath;
+                window.location.href = 'millanagroseed.com/leaflets/' + leafletPath;
+                console.log(window.location.href)
             } else {
-                window.location.href = '/404'; // Redirect to 404 page if the leaflet does not exist
+                console.log("Leaflet not found and Hello World!")
             }
         });
     </script>
