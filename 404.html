@@ -218,7 +218,7 @@
             if(window.location.pathname == '/404')
                 return;
             if (exists) {
-                window.location.href = leafletPath;
+                window.location.href = 'leaflets/' + leafletPath;
                 console.log('5', window.location.href)
             } else {
                 console.log("Leaflet not found and Hello World!")
