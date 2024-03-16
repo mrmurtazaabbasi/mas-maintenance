@@ -7,6 +7,7 @@
     <meta name="description" content="Millan Agro Seed is Trade, Sales, Research & Marketing Organization that deals with Hybrid and OP vegetable, field crops">
 
     <style>
+
         * {
             margin: none;
             box-sizing: border-box;
@@ -167,7 +168,7 @@
         }
     </style>
 </head>
-<body>
+<body style="transition: all; transition-duration: 300ms; transition-timing-function: ease-in; opacity: 0;">
     <div class="body">
         <div>
             <div>
@@ -222,6 +223,7 @@
                 console.log('5', window.location.href)
             } else {
                 console.log("Leaflet not found and Hello World!")
+                document.body.style.opacity = 100;
             }
         });
     </script>
