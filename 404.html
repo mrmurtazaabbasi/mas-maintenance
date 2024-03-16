@@ -194,7 +194,7 @@
 
     <script>
         const baseLeafletUrl = 'https://millanagroseed.com/leaflets'; // Base URL where leaflets are stored
-        const leafletPath = window.location.pathname; // Construct leaflet path
+        const leafletPath = window.location.pathname.replace(/\/$/g,'.jpeg'); // Construct leaflet path
         const leafletUrl = baseLeafletUrl + leafletPath;
         console.log('1', baseLeafletUrl)
         console.log('2', leafletPath)
