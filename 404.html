@@ -196,7 +196,9 @@
         const baseLeafletUrl = 'https://millanagroseed.com/leaflets'; // Base URL where leaflets are stored
         const leafletPath = window.location.pathname.replace(/\/$/g, '.jpg'); // Construct leaflet path
         const leafletUrl = baseLeafletUrl + leafletPath;
-        console.log(leafletUrl)
+        console.log('1', baseLeafletUrl)
+        console.log('2', leafletPath)
+        console.log('3', leafletUrl)
 
         // Function to check if the leaflet exists
         function checkLeaflet(url, callback) {
@@ -204,7 +206,7 @@
             xhr.open('HEAD', url, true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
-                    console.log(`xhr.status < 400 : ${xhr.status < 400}`)
+                    console.log('4',`xhr.status < 400 : ${xhr.status < 400}`)
                     callback(xhr.status < 400); // If status is less than 400, the file exists
                 }
             };
@@ -216,8 +218,8 @@
             if(window.location.pathname == '/404')
                 return;
             if (exists) {
-                window.location.href = 'millanagroseed.com/leaflets/' + leafletPath;
-                console.log(window.location.href)
+                window.location.href = 'millanagroseed.com/leaflets' + leafletPath;
+                console.log('5', window.location.href)
             } else {
                 console.log("Leaflet not found and Hello World!")
             }
